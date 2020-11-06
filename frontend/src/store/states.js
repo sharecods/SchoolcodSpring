@@ -1,7 +1,8 @@
 export default {
-  todoItems: [],//
-  editingId: 0,//
-  nextTodoId: 1,//
+  todoItems: [],
+  editingId: 0,
+  nextTodoId: 1,
   filter: null,
-  count: 0
+  count: 0,
+  boards: []
 }

@@ -4,7 +4,8 @@ import {
   CLEAR_ALL,
   RESTORE,
   EDIT_TODO,
-  TOGGLE_TODO_STATUS
+  TOGGLE_TODO_STATUS,
+  FETCH_BOARD_LIST
 } from './mutation-types'
 
 export default {
@@ -38,4 +39,10 @@ export default {
   clearAll (context) {
     context.commit(CLEAR_ALL)
   },
+  fetchBoardList ({ commit }) {
+    return axios.get('http://localhost:7777/boards')
+        .then(res => {
+          commit(FETCH_BOARD_LIST, res.data)
+        })
+  }
 }
