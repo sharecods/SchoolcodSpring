@@ -4,5 +4,6 @@ export default {
   nextTodoId: 1,
   filter: null,
   count: 0,
-  boards: []
+  boards: [],
+  board: null
 }

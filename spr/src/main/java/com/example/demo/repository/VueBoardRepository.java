@@ -54,4 +54,12 @@ public class VueBoardRepository {
         );
         return results;
     }
+    public void delete(Long boardNo) throws Exception {
+        String query = "delete from cafe_board where board_no = ?";
+        jdbcTemplate.update(query, boardNo);
+    }
+    public void update(VueBoard board) throws Exception {
+        String query = "update cafe_board set title = ?, content = ? where board_no = ?";
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
+    }
 }

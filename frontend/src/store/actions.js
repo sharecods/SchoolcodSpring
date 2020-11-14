@@ -5,7 +5,8 @@ import {
   RESTORE,
   EDIT_TODO,
   TOGGLE_TODO_STATUS,
-  FETCH_BOARD_LIST
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 } from './mutation-types'
 
 export default {
@@ -44,5 +45,13 @@ export default {
         .then(res => {
           commit(FETCH_BOARD_LIST, res.data)
         })
-  }
+  },
+  fetchBoard ({ commit }, boardNo) {
+    console.log('fetchBoard ' + commit + ', boardNo = ' + boardNo)
+    return axios.get(`http://localhost:7777/boards/${boardNo}`)
+        .then(res => {
+          console.log('fetchBoard - res: ' + res.data)
+          commit(FETCH_BOARD, res.data)
+        })
+  },
 }

@@ -12,3 +12,4 @@ export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
 export const SET_FILTER = 'SET_FILTER'
 
 export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
+export const FETCH_BOARD = 'FETCH_BOARD'
